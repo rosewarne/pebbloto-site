@@ -1,0 +1,51 @@
+/* Shared styles of the Pebbloto pages. Values mirror the "Pebbloto Web"
+   variables in the Figma file (Light / Dark modes). */
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('fonts/pixelify-sans-latin.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  --bg: #fff; --card: #f4f1f1; --text: #222; --muted: #666; --link: #c25e0c;
+  --accent: #f58220; --on-accent: #fff; --err: #b00; --border: #ccc;
+  --banner: #f50;
+  --r-card: 24px; --r-button: 16px; --r-input: 8px;
+  --page: 16px; --stack: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1d1a17; --card: #2a2622; --text: #eee; --muted: #aaa; --link: #f58220; --err: #ff7b7b; --border: #5a534c; }
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; margin: 0; padding: var(--page); background: var(--bg); color: var(--text); }
+main { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--stack); }
+main.narrow { max-width: 480px; }
+h1, h2, p, ul { margin: 0; }
+h1 { font-size: 26px; line-height: 1.2; }
+main.narrow h1 { font-size: 22px; }
+h2 { font-size: 18px; line-height: 1.3; }
+p, li { font-size: 16px; line-height: 1.5; }
+small, .small { font-size: 13px; line-height: 1.4; color: var(--muted); }
+a { color: var(--link); }
+ul { list-style: none; padding: 0; }
+li::before { content: '\2022\00a0\00a0'; }
+.title { display: flex; flex-direction: column; gap: 4px; }
+.card { background: var(--card); border-radius: var(--r-card); padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.12); display: flex; flex-direction: column; gap: 12px; }
+.err { color: var(--err); }
+textarea { width: 100%; font: 13px/1.4 inherit; font-family: inherit; padding: 10px; border: 1px solid var(--border); border-radius: var(--r-input); background: var(--bg); color: var(--text); resize: none; }
+button { width: 100%; font: 700 17px/1.2 inherit; font-family: inherit; padding: 12px; border: 0; border-radius: var(--r-button); background: var(--accent); color: var(--on-accent); }
+[hidden] { display: none !important; }
+
+/* Landing banner: one composition at 720:320; every measure is in cqw (100cqw =
+   banner width) so it scales as a whole, like the Figma frame. */
+.banner { position: relative; aspect-ratio: 720 / 320; background: var(--banner); overflow: hidden; container-type: inline-size; }
+.banner > * { position: absolute; }
+.banner .copy { left: 3.333cqw; top: 3.411cqw; width: 49.44cqw; display: flex; flex-direction: column; gap: 1.686cqw; color: #fff; font-family: 'Pixelify Sans', monospace; }
+.banner h1 { font-size: 11.38cqw; line-height: 12.363cqw; font-weight: 500; }
+.banner .tagline { font-size: 4.496cqw; line-height: 1.2; padding-left: 0.562cqw; }
+.banner .c { transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) skewX(var(--skew, 0deg)); }
+.banner .screen-bg { left: 77.929cqw; top: 23.171cqw; width: 16.783cqw; height: 21.046cqw; background: #000; --rot: 16.09deg; --skew: .68deg; }
+.banner .glare { left: 66.659cqw; top: 10.355cqw; width: 19.055cqw; height: 19.673cqw; }
+.banner .watch { left: 77.139cqw; top: 25.36cqw; width: 29.525cqw; height: 69.743cqw; object-fit: cover; --rot: 15.33deg; --skew: .66deg; }
+.banner .face { left: 78.428cqw; top: 23.155cqw; width: 12.363cqw; height: 11.566cqw; object-fit: cover; --rot: 15deg; }
+.banner .icon { width: 6.743cqw; height: 6.743cqw; image-rendering: pixelated; }

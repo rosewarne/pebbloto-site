@@ -6,38 +6,24 @@
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex">
 <title>Pebbloto sign-in</title>
-<style>
-  :root { --bg: #fff7ef; --card: #fff; --text: #222; --muted: #666; --accent: #f58220; --err: #b00; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #1d1a17; --card: #2a2622; --text: #eee; --muted: #aaa; --err: #ff7b7b; }
-  }
-  body { font-family: -apple-system, Helvetica, Arial, sans-serif; margin: 0; padding: 16px; background: var(--bg); color: var(--text); }
-  main { max-width: 480px; margin: 0 auto; }
-  h1 { font-size: 22px; margin: 8px 0; }
-  p { line-height: 1.4; }
-  .card { background: var(--card); border-radius: 12px; padding: 14px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
-  textarea { width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background: var(--card); color: var(--text); }
-  button { display: block; width: 100%; font-size: 17px; padding: 12px; border: 0; border-radius: 10px; margin-top: 10px; background: var(--accent); color: #fff; }
-  .err { color: var(--err); }
-  small { color: var(--muted); }
-  [hidden] { display: none; }
-</style>
+<link rel="icon" href="../logo.png">
+<link rel="stylesheet" href="../site.css">
 </head>
 <body>
-<main>
+<main class="narrow">
   <h1>Pebbloto</h1>
   <div class="card" id="working"><p>Finishing the sign-in...</p></div>
   <div class="card" id="manual" hidden>
     <p><b>Almost done.</b> Copy this text, open the Pebbloto settings again in the Pebble app, paste it in the sign-in box and tap Save.</p>
     <textarea id="url" rows="4" readonly></textarea>
     <button id="copy" type="button">Copy</button>
-    <p><small>The code only works once and only on the phone that started the sign-in.</small></p>
+    <small>The code only works once and only on the phone that started the sign-in.</small>
   </div>
   <div class="card" id="failed" hidden>
     <p class="err" id="error"></p>
     <p>Open the Pebbloto settings in the Pebble app and tap Sign in to Yoto again.</p>
   </div>
-  <p><small>Pebbloto is an independent, third-party app that uses the Yoto API. It is not made by Yoto. <a href="../privacy/">Privacy</a></small></p>
+  <small>Pebbloto is an independent, third-party app that uses the Yoto API. It is not made by Yoto. <a href="../privacy/">Privacy</a></small>
 </main>
 <script>
 (function () {

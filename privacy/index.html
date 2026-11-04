@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pebbloto Privacy</title>
+<style>
+  :root { --bg: #fff7ef; --card: #fff; --text: #222; --muted: #666; --accent: #c25e0c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1d1a17; --card: #2a2622; --text: #eee; --muted: #aaa; --accent: #f58220; }
+  }
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; margin: 0; padding: 16px; background: var(--bg); color: var(--text); }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 8px 0 4px; }
+  h2 { font-size: 18px; margin: 0 0 6px; }
+  p, li { line-height: 1.5; }
+  ul { padding-left: 20px; margin: 6px 0; }
+  .card { background: var(--card); border-radius: 12px; padding: 14px 16px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  a { color: var(--accent); }
+  small { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pebbloto privacy policy</h1>
+  <p><small>Last updated: 4 November 2026</small></p>
+
+  <div class="card">
+    <h2>In short</h2>
+    <p>Pebbloto lets you control your Yoto player from a Pebble watch. It keeps what it needs on your own phone, talks only to Yoto (plus one radio service, see below), and has no servers, accounts, ads or analytics of its own. Nobody, including the developer, can see your Yoto account through Pebbloto.</p>
+    <p>Pebbloto is an independent, third-party app that uses the Yoto API. It is not made, endorsed or supported by Yoto.</p>
+  </div>
+
+  <div class="card">
+    <h2>For children</h2>
+    <p>Pebbloto is meant to be set up by a parent or carer. It does not ask children for anything, does not collect anything about them, and does not show ads. The watch only shows the titles and pictures of the cards already in your family's Yoto library.</p>
+  </div>
+
+  <div class="card">
+    <h2>What is kept on your phone</h2>
+    <p>Inside the Pebble app on your phone, Pebbloto stores:</p>
+    <ul>
+      <li>the sign-in keys Yoto gives it when you sign in (so you don't have to sign in every time);</li>
+      <li>which Yoto player you chose, and your own Yoto Client ID if you entered one;</li>
+      <li>a copy of your library list (card titles, folder names and picture links), the last thing that was playing, and small versions of the card pictures, so the watch opens quickly.</li>
+    </ul>
+    <p>None of this leaves your phone except to talk to Yoto as described below. <b>Sign out</b> in the Pebbloto settings deletes all of it. Uninstalling Pebbloto deletes it too.</p>
+    <p>The watch only holds titles and pictures in memory while the app is open.</p>
+  </div>
+
+  <div class="card">
+    <h2>Who Pebbloto talks to</h2>
+    <ul>
+      <li><b>Yoto</b>: to sign you in, read your library and players, and send play, pause, volume and stop commands to the player you chose. This uses Yoto's sign-in service, Yoto's API, Yoto's live connection service and Yoto's picture servers. Yoto's own <a href="https://eu.yotoplay.com/legal/privacy-policy">privacy policy</a> applies to that data.</li>
+      <li><b>radio.co</b>: only while a card called "Yoto Radio" is playing, Pebbloto asks radio.co's public service which song is on air. Nothing about you or your account is sent; like any website, radio.co sees your phone's internet address.</li>
+      <li><b>This website</b> (hosted by GitHub Pages): after you sign in, Yoto sends you to a page here that hands the one-time sign-in code back to the Pebble app. The page does not store or send the code anywhere else. GitHub may keep the usual web server logs, such as your internet address.</li>
+    </ul>
+    <p>Pebbloto does not sell, share or analyse your data, and the developer never receives it.</p>
+  </div>
+
+  <div class="card">
+    <h2>Permissions it asks Yoto for</h2>
+    <p>Read your family library and your content, see your players, control your players, and stay signed in. It cannot buy anything, change your account or edit your cards.</p>
+  </div>
+
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Questions or requests: <a href="mailto:guillermo@rosewarne.es">guillermo@rosewarne.es</a>. If this policy changes, the new version will be published on this page with a new date.</p>
+  </div>
+</main>
+</body>
+</html>
